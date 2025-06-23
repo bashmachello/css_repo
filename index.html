@@ -104,6 +104,12 @@
         tg.expand();
 
         buy.addEventListener("click", () => {
+            console.log("Buy clicked");
+            if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+                console.log("User data:", tg.initDataUnsafe.user);
+            } else {
+                console.log("User data not available");
+            }
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
